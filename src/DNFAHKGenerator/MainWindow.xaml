@@ -1,0 +1,22 @@
+﻿<Window x:Class="DNFAHKGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DNFAHKGenerator"
+        mc:Ignorable="d"
+        Title="DNF修炼场AHK连招脚本生成器" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="DataGridSkills" HorizontalAlignment="Left" Height="265" Margin="17,27,0,0" VerticalAlignment="Top" Width="503" RenderTransformOrigin="0.357,0.079" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="技能名称" IsReadOnly="True" Width="200"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="技能按键" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonFire" Content="Fire!" HorizontalAlignment="Left" Margin="587,201,0,0" VerticalAlignment="Top" Width="118" Height="86"/>
+        <ComboBox x:Name="ComboBoxPreset" HorizontalAlignment="Left" Margin="574,77,0,0" VerticalAlignment="Top" Width="174">
+            <ComboBoxItem Content="方案一" IsSelected="True"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
