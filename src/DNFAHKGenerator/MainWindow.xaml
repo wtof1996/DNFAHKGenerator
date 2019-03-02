@@ -7,16 +7,20 @@
         mc:Ignorable="d"
         Title="DNF修炼场AHK连招脚本生成器" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="DataGridSkills" HorizontalAlignment="Left" Height="265" Margin="17,27,0,0" VerticalAlignment="Top" Width="503" RenderTransformOrigin="0.357,0.079" AutoGenerateColumns="False">
+        <DataGrid x:Name="DataGridSkills" ItemsSource="{Binding Path=Skill}" HorizontalAlignment="Left" Height="265" Margin="17,27,0,0" VerticalAlignment="Top" Width="424" RenderTransformOrigin="0.357,0.079" AutoGenerateColumns="False" CanUserAddRows="False" CellEditEnding="DataGridSkills_CellEditEnding">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="技能名称" IsReadOnly="True" Width="200"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="技能按键" Width="300"/>
+                <DataGridTextColumn x:Name="ColumnId" Binding="{Binding Path=Id}" ClipboardContentBinding="{x:Null}" Header="技能ID" IsReadOnly="True" FontSize="14"/>
+                <DataGridTextColumn x:Name="ColumnSkillName" Binding="{Binding Path=SkillName}" ClipboardContentBinding="{x:Null}" Header="技能名称" Width="200" FontSize="14"/>
+                <DataGridTextColumn x:Name="ColumnHotKeys" Binding="{Binding Path=HotKeys}" ClipboardContentBinding="{x:Null}" Header="技能按键" Width="*" FontSize="14"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="ButtonFire" Content="Fire!" HorizontalAlignment="Left" Margin="587,201,0,0" VerticalAlignment="Top" Width="118" Height="86"/>
-        <ComboBox x:Name="ComboBoxPreset" HorizontalAlignment="Left" Margin="574,77,0,0" VerticalAlignment="Top" Width="174">
+        <Button x:Name="ButtonFire" Content="Fire!" HorizontalAlignment="Left" Margin="542,153,0,0" VerticalAlignment="Top" Width="118" Height="86" FontSize="22"/>
+        <ComboBox x:Name="ComboBoxPreset" HorizontalAlignment="Left" Margin="509,74,0,0" VerticalAlignment="Top" Width="174">
             <ComboBoxItem Content="方案一" IsSelected="True"/>
         </ComboBox>
+        <Button x:Name="BtnLoadSkill" Content="加载技能列表" HorizontalAlignment="Left" Margin="17,324,0,0" VerticalAlignment="Top" Width="153" Height="58" FontSize="18" Click="BtnLoadSkill_Click"/>
+        <Button x:Name="BtnSaveSkill" Content="保存技能列表" HorizontalAlignment="Left" Margin="288,324,0,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="-0.378,-0.892" Height="58" FontSize="18" Click="BtnSaveSkill_Click"/>
+        <Button x:Name="BtnAddSkill" Content="增加技能" HorizontalAlignment="Left" Margin="191,346,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddSkill_Click"/>
 
     </Grid>
 </Window>
